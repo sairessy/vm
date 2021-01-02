@@ -1,0 +1,268 @@
+@font-face {
+    src: url(../assets/fonts/RobotoMono-VariableFont_wght.ttf);
+    font-family: rbt;
+}
+
+* {
+    font-family: rbt;
+    box-sizing: border-box;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background: url(../assets/img/download-v.png) no-repeat -50px 50px/500px; */
+    background-color: #eee;
+}
+
+header {
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 4px 2px #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+header #right #lang span {
+    padding: 2px 0;
+    border-bottom: 1px solid #ff000000;
+    text-align: center;
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 100;
+    color: #666;
+    cursor: pointer;
+}
+
+header #right #lang span#pt {
+    border-bottom-color: #ff0000;
+}
+
+
+header #right #lang span:hover {
+    border-bottom-color: #ff0000;
+}
+
+main {
+    width: 70%;
+    margin: auto;
+    padding: 5px;
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    margin: 20px auto;
+}
+
+form input, button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    box-shadow: 0 2px 2px #ddd;
+}
+
+form input {
+    width: 100%;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+form input:focus {
+    box-shadow: 0 0 1px 1px #ccc;
+}
+
+form button {
+    background-color: #9c2aa0;
+    color: #fff;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 2px 2px #ddd;
+    cursor: pointer;
+}
+
+main h2 {
+    font-size: 18px;
+    font-weight: 100;
+    color: #999;
+    margin: 5px 5px;
+}
+
+#items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.item {
+    position: relative;
+    height: 300px;
+    box-shadow: 0 0 2px 4px #ededed;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.item .title {
+    color: #666;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    border-bottom: 1px solid #eee;
+    font-weight: 100;
+}
+
+.item .cover {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: #9c2aa008;
+    width: 140px;
+    height: 140px; 
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .cover img {
+    width: 80px;
+    height: 80px;
+    animation: anm 5s infinite;
+}
+
+@keyframes anm {
+    0%{transform: rotate(0);}
+    50%{transform: rotate(360deg);}
+    75%{transform: scale(1.2);}
+    100%{transform: scale(1); transform: rotate(0);}
+}
+
+footer {
+    padding: 10px 140px;
+    border-top: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+#social  {
+    display: flex;
+    font-size: 32px;
+}
+
+#social i {
+    color: #fff;
+}
+
+#links a {
+    margin: 5px 0;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+#social a i {
+    margin: 10px;
+}
+
+#links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#links > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#copy {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#copy a {
+    color: #fff
+}
+
+#webchat, #gotop {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 2px 4px #ddd;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+    transition: transform .5s ease;
+}
+
+#gotop {
+    bottom: 60px;
+    transform: scale(0);
+}
+
+#webchat:hover, #gotop:hover {
+    background-color: #eee;
+}
+
+@media screen and (max-width: 414px) {
+
+    header {
+        width: 100%;
+        height: unset;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+    }
+
+    #items {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .item {
+        height: 300px;
+    }
+
+    footer {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #social {
+        font-size: 20px;
+        justify-content: space-around;
+    }
+
+    #links {
+        flex-direction: column;
+    }
+
+    #copy {
+        flex-direction: column;
+    }
+}
